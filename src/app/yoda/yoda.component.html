@@ -1,0 +1,14 @@
+<h1>Score : {{average}}</h1>
+<div *ngFor="let question of questions; let i = index">
+
+  <app-question [question]="questions[i]" (getAnswer)="onGetAnswer($event)"></app-question>
+
+</div>
+<div *ngIf="results && average < 12" style="background-color: brown">
+  <p>Go and never come back...</p>
+</div>
+<div *ngIf="results && average >= 12" style="background-color: green">
+    <p>Okay young padawan now you feel the dev force !</p>
+</div>
+
+
